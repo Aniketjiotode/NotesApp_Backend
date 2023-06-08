@@ -1,0 +1,20 @@
+﻿using Microsoft.EntityFrameworkCore;
+using RepositoryLayer.Entity;
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace RepositoryLayer.Context
+{
+    public class FundooContext:DbContext
+    {
+        public FundooContext(DbContextOptions options)
+            : base(options)
+        {
+        }
+        public  DbSet<UserEntity> userEntities { get; set; }
+        public  DbSet<NotesEntity> notesEntities { get; set; }
+        public DbSet<CollaboratorEntity> collaboratorsEntities { get; set;}
+        public DbSet<LabelEntity> labelEntities { get; set;}
+    }
+}
